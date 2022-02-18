@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# How to create data visualisation with Vega Lite on React.js
+Based on post by [Ibrahim Ragab](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) and offical [Vega Lite Embed documentation](https://vega.github.io/vega-lite/usage/embed.html).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Initial set up
+Requirement: Install Node.js on your machine, and install React as a local dependency
+```
+npm install -g create-react-app
+```
 
-## Available Scripts
+1. From GitHub, create a new Repository and link it to an empty folder on your machine as your app's local copy via GitHub Desktop. In this example, the folder will be called "vegalitereact".
 
-In the project directory, you can run:
+From the Repository's Settings, scroll to the bottom, click GitHub Pages and publish the site to https://datamesse.github.io/vegalitereact/.
 
-### `npm start`
+2. From Command Prompt, navigate to the parent directory of the empty folder.
+```
+create-react-app vegalitereact
+cd vegalitereact
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. From Visual Studio Code, start building the app, and watch it render via http://localhost:3000/.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Initial push to GitHub Pages
 
-### `npm test`
+1. From Visual Studio Code's terminal, install GitHub Pages.
+```
+npm install gh-pages --save-dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. From Visual Studio Code, add homepage, predeploy, and deploy attributes to the package.json file.
+```
+{
+  "homepage": "http://datamesse.github.io/vegalitereact/"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+  },
+}
+```
 
-### `npm run build`
+3. From Visual Studio Code, build the deployment. Patiently wait until the last line of code "Published" appears.
+```
+npm run deploy
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note:** It is important to let the process complete fully, otherwise you may get errors that may require rebuilding from scratch.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. From GitHub, change the GitHub Pages setting to deploy from branch gh-pages.
+5. From GitHub Desktop, push the changes (the Current branch selected should still be main by default, do not change this).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Note:** You will only see the changes you applied to the source files in GitHub Desktop for the push, not the compiled file changes that will end up deployed to gh-pages branch. This is normal.
 
-### `npm run eject`
+6. From the GitHub repository's Settings, change Source branch from main to gh-pages. Remember from GitHub Desktop, that main should remain selected as the branch for pushes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note:** If you make a change to the source code and push it without building first, no changes will be reflected on the gh-pages branch. So ensure that when trying to push gh-pages build changes, that something in the source files has been changed, otherwise GitHub Desktop won't detect anything for the push.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note:** If you hit an error whilst performing the push, it may be relating to number/size of files being sent, in which case from GitHub Desktop, try repushing, otherwise click the History tab and undo or reverse the commits that are pending, and resend the changes in smaller amounts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Install Vega, Vega Lite, and Vega Embed dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Install the dependencies
+```
+npm install vega
+npm install vega-lite
+npm install vega-embed
+```
 
-## Learn More
+2. Create a React Component that embeds the Vega Lite specification (.vl.json file extension)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+src\App.js
+```
+import './App.css';
+import EmbeddedVisual from './components/EmbeddedVisual.js';
+function App() {
+  return (
+    <div className="App">     
+      <EmbeddedVisual />
+    </div>
+  );
+}
+export default App;
+```
 
-### Code Splitting
+src\components\EmbeddedVisual.js
+```
+import React from 'react'
+import vegaEmbed from "vega-embed";
+import visual from '../visuals/yourspecification.vl.json'
+export default function EmbeddedVisual() {
+    return (
+        <>
+            <div id='vis'></div>
+        </>
+    )
+}
+vegaEmbed('#vis', visual);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+src\visuals\yourspecification.vl.json
+* Specification taken from [Vega Lite official website example: Simple Bar Chart](https://vega.github.io/vega-lite/examples/bar.html)
+```
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
+      {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
+      {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "b", "type": "quantitative"}
+  }
+}
+```
