@@ -25,6 +25,7 @@ body {
   font-size: 9vh;
   width: 50vw;
   height: 100%;
+  white-space: nowrap;
   display: inline-block;
   border: 1px solid yellow;
 }
@@ -32,4 +33,14 @@ body {
 .external-link {
   display: inline-block;
   border: 1px solid greenyellow;
+}
+
+.external-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.external-link img {
+  height: 35px;
+  width: 35px;
 }
