@@ -119,4 +119,3 @@ src\visuals\yourspecification.vl.json
   }
 }
 ```
-
