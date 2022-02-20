@@ -6,8 +6,18 @@ import { githubURL, twitterURL, icons8URL, logo_github, logo_icons8, logo_twitte
 export default function Dashboard() {
     return (
         <>
-
             <div class='section-top'>
+                <div class='section-top-left'>
+                    <div class='section-top-left-top'>
+                        section-top-left-top
+                    </div>
+                    <div class='section-top-left-bottom'>
+                        section-top-left-bottom
+                    </div>
+                </div>
+                <div class='section-top-right'>
+                    section-top-right
+                </div>
             </div>
           
             <div class='section-bottom'>
