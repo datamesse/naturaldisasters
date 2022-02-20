@@ -103,10 +103,19 @@ body {
 
 @media only screen and (max-width: 950px) {
 
+  .section-bottom {
+    position: absolute;
+    top: 0px;
+  }
+
   .external-links {
     float: none;
     margin-top: 10px;
     border: 1px solid red;
+  }
+
+  .section-top {
+    margin-top: 110px;
   }
 
 }
