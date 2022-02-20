@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Linechart",
+  "width": 1100,
+  "background": "white",
+  "data": {"url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.json"},
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "#FFAF21"
+    },
+    "color": {
+      "x1": 1,
+      "y1": 1,
+      "x2": 1,
+      "y2": 0,
+      "gradient": "linear",
+      "stops": [
+        {
+          "offset": 0,
+          "color": "white"
+        },
+        {
+          "offset": 1,
+          "color": "darkgreen"
+        }
+      ]
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "Estimate start date",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "Estimated people affected",
+      "type": "quantitative",
+      "scale": {"domain": [0, 350000000]}
+    }
+  }
+}

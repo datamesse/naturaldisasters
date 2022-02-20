@@ -30,7 +30,6 @@ body {
   border: 1px solid red;
 }
 
-
 .section-top-right {
   width: 25vw; /* edit this to 28 */
   height: 90vh;
@@ -99,6 +98,19 @@ body {
 }
 
 
+/* -------------- VEGA VISUALISATIONS -------------- */
+
+.section-top-left-bottom .vega-embed canvas {
+  width: 72vw;
+  height: 70vh;
+  background-color: rgba(15, 15, 15, 0.65);
+}
+
+.section-top-left-top .vega-embed canvas {
+
+  height: 20vh;
+}
+
 /* -------------- SMALLER SCREEN -------------- */
 
 @media only screen and (max-width: 950px) {
@@ -115,7 +127,16 @@ body {
   }
 
   .section-top {
-    margin-top: 110px;
+    margin-top: 22vh;
   }
+
+  .section-top-left {
+    width: 100vw;
+  }
+
+  .section-top-left-bottom .vega-embed canvas {
+    width: 100vw;
+  }
+
 
 }
