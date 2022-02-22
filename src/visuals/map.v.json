@@ -95,10 +95,31 @@
       "transform": [
         { "type": "graticule", "step": [5, 5] }
       ]
+    },
+    {
+      "name": "coordinates",
+      "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.json"
     }
   ],
 
   "marks": [
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     {
       "type": "shape",
       "from": {"data": "graticule"},

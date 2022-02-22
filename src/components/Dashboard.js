@@ -1,6 +1,6 @@
 import React from 'react'
 import vegaEmbed from "vega-embed"
-import { vbar, vcolumn, vmap, vline } from '../data/visuals'
+import { vbar, vcolumn, vmap, vline, vtimeline } from '../data/visuals'
 import { githubURL, twitterURL, icons8URL, logo_github, logo_icons8, logo_twitter, logo_github_hover, logo_icons8_hover, logo_twitter_hover } from '../data/data'
 
 export default function Dashboard() {
@@ -71,6 +71,7 @@ vegaEmbed('#vis1', vbar, {"actions": false});
 vegaEmbed('#vis2', vmap, {"actions": false});
 vegaEmbed('#vis3', vcolumn, {"actions": false});
 vegaEmbed('#vis4', vline, {"actions": false});
+vegaEmbed('#vis5', vtimeline, {"actions": false});
 
 
 /* {"actions": false} hides the built in Vega ellipsis tool */

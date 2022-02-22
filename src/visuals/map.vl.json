@@ -1,0 +1,47 @@
+{
+ "width": 900,
+ "height": 600,
+ "data": {
+          "url": "https://gist.githubusercontent.com/andriy-gazin/442044f2543e9c7d19d76d0c2dc8125f/raw/6a1f9b0be8cbf6c20ecda24b333ebbb315035185/world.json",
+          "format": {
+                     "type": "topojson",
+                     "feature": "world"
+                    }
+         },
+ "projection": { "type": "equalEarth" },
+ "layer": [
+           {
+            "mark": {
+                     "type": "geoshape",
+                     "fill": "darkgray",
+                     "stroke": "#F0F0F0",
+                     "strokeWidth": 0.5
+                    }
+           },
+           {
+            "data": { "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv" },
+            "mark": {
+                     "type": "circle",
+                     "color": "#D11349",
+                     "size": 25,
+                     "opacity": 0.5,
+                     "blend": "darken"
+                    },
+            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.latitude", "as": "url" }],
+            "encoding": {
+                         "longitude": {
+                                       "field": "longitude",
+                                       "type": "quantitative"
+                                      },
+                         "latitude": {
+                                      "field": "latitude",
+                                      "type": "quantitative"
+                                     },
+                         "tooltip": [ { "field": "latitude", "type": "quantitative"},
+                                      { "field": "longitude", "type": "quantitative"}
+                                    ],
+                         "href": {"field": "url", "type": "nominal"}
+                        }
+           }
+          ]
+}

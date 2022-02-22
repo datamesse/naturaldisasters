@@ -1,0 +1,74 @@
+{
+"description":"https://observablehq.com/@andriy-gazin/vega-lite-concatenate-map-chart",
+"vconcat": [
+
+    {
+        "width": 900,
+        "height": 600,
+        "data": {
+                 "url": "https://gist.githubusercontent.com/andriy-gazin/442044f2543e9c7d19d76d0c2dc8125f/raw/6a1f9b0be8cbf6c20ecda24b333ebbb315035185/world.json",
+                 "format": {
+                            "type": "topojson",
+                            "feature": "world"
+                           }
+                },
+        "projection": { "type": "equalEarth" },
+        "layer": [
+                  {
+                   "mark": {
+                            "type": "geoshape",
+                            "fill": "darkgray",
+                            "stroke": "#F0F0F0",
+                            "strokeWidth": 0.5
+                           }
+                  },
+                  {
+                   "data": { "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv" },
+                   "mark": {
+                            "type": "circle",
+                            "color": "#D11349",
+                                "size": 25,
+                                "opacity": 0.5,
+                            "blend": "darken"
+                           },
+                   "encoding": {
+                                "longitude": {
+                                              "field": "longitude",
+                                              "type": "quantitative"
+                                             },
+                                "latitude": {
+                                             "field": "latitude",
+                                             "type": "quantitative"
+                                            }
+                               }
+                  }
+               ]
+        },
+        
+    {
+        "width": 900,
+        "height": 150,
+        "data": { "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv" },
+        "mark": {
+                 "type": "bar",
+                 "color": "#D11349"
+                },
+        "encoding": {
+                     "x": {
+                           "timeUnit": "yearmonthdate",
+                           "field": "time",
+                           "type": "temporal"
+                          },
+                     "y": { "aggregate": "count" }
+                    }
+    }
+      
+],
+  
+"config": {
+           "view": { "stroke": null }
+          }
+
+}
+
+
