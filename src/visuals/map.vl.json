@@ -27,7 +27,7 @@
                             "color": "#FFAF21",
                             "size": 25,
                             "opacity": 0.5,
-                            "blend": "none"
+                            "blend": "lighten"
                            },
                    "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + '+' + datum.date + '+' + datum.type", "as": "url" }],
                    "encoding": {
@@ -43,6 +43,8 @@
                                              { "field": "date", "type": "nominal"},
                                              { "field": "group", "type": "nominal"},
                                              { "field": "type", "type": "nominal"},
+                                             { "field": "latitude", "type": "quantitative"},
+                                             { "field": "longitude", "type": "quantitative"},
                                              { "field": "declaredemergency", "type": "nominal"},
                                              { "field": "internationalappeal", "type": "nominal"},
                                              { "field": "peopleaffected", "type": "quantitative"},
