@@ -19,7 +19,7 @@
                     }
            },
            {
-            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisastersmap.csv" },
             "mark": {
                      "type": "circle",
                      "color": "#D11349",
