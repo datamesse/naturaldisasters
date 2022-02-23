@@ -19,7 +19,7 @@
                     }
            },
            {
-            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisastersmap.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.csv" },
             "mark": {
                      "type": "circle",
                      "color": "#D11349",
@@ -27,7 +27,7 @@
                      "opacity": 0.5,
                      "blend": "darken"
                     },
-            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + datum.date + datum.type", "as": "url" }],
+            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + '+' + datum.date + '+' + datum.type", "as": "url" }],
             "encoding": {
                          "longitude": {
                                        "field": "longitude",
