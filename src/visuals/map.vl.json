@@ -19,7 +19,7 @@
                     }
            },
            {
-            "data": { "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.csv" },
             "mark": {
                      "type": "circle",
                      "color": "#D11349",
@@ -27,7 +27,7 @@
                      "opacity": 0.5,
                      "blend": "darken"
                     },
-            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.latitude", "as": "url" }],
+            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + datum.date + datum.type", "as": "url" }],
             "encoding": {
                          "longitude": {
                                        "field": "longitude",
@@ -37,8 +37,9 @@
                                       "field": "latitude",
                                       "type": "quantitative"
                                      },
-                         "tooltip": [ { "field": "latitude", "type": "quantitative"},
-                                      { "field": "longitude", "type": "quantitative"}
+                         "tooltip": [ { "field": "country", "type": "nominal"},
+                                      { "field": "date", "type": "nominal"},
+                                      { "field": "type", "type": "nominal"}
                                     ],
                          "href": {"field": "url", "type": "nominal"}
                         }
