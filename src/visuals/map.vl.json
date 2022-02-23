@@ -1,48 +1,61 @@
 {
- "width": 900,
- "height": 600,
- "data": {
-          "url": "https://gist.githubusercontent.com/andriy-gazin/442044f2543e9c7d19d76d0c2dc8125f/raw/6a1f9b0be8cbf6c20ecda24b333ebbb315035185/world.json",
-          "format": {
-                     "type": "topojson",
-                     "feature": "world"
-                    }
-         },
- "projection": { "type": "equalEarth" },
- "layer": [
-           {
-            "mark": {
-                     "type": "geoshape",
-                     "fill": "darkgray",
-                     "stroke": "#F0F0F0",
-                     "strokeWidth": 0.5
-                    }
-           },
-           {
-            "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.csv" },
-            "mark": {
-                     "type": "circle",
-                     "color": "#D11349",
-                     "size": 25,
-                     "opacity": 0.5,
-                     "blend": "darken"
-                    },
-            "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + '+' + datum.date + '+' + datum.type", "as": "url" }],
-            "encoding": {
-                         "longitude": {
-                                       "field": "longitude",
-                                       "type": "quantitative"
-                                      },
-                         "latitude": {
-                                      "field": "latitude",
-                                      "type": "quantitative"
-                                     },
-                         "tooltip": [ { "field": "country", "type": "nominal"},
-                                      { "field": "date", "type": "nominal"},
-                                      { "field": "type", "type": "nominal"}
-                                    ],
-                         "href": {"field": "url", "type": "nominal"}
-                        }
-           }
-          ]
-}
+        "background": "null",
+        "width": 900,
+        "height": 600,
+        "data": {
+                 "url": "https://gist.githubusercontent.com/andriy-gazin/442044f2543e9c7d19d76d0c2dc8125f/raw/6a1f9b0be8cbf6c20ecda24b333ebbb315035185/world.json",
+                 "format": {
+                            "type": "topojson",
+                            "feature": "world"
+                           }
+                },
+        "projection": { "type": "equalEarth" },
+        "layer": [
+                  {
+                   "mark": {
+                            "type": "geoshape",
+                            "fill": "black",
+                            "stroke": "#FFAF21",
+                            "strokeWidth": 0.25,
+                            "opacity": 0.65
+                           }
+                  },
+                  {
+                   "data": { "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.csv" },
+                   "mark": {
+                            "type": "circle",
+                            "color": "#FFAF21",
+                            "size": 25,
+                            "opacity": 0.5,
+                            "blend": "none"
+                           },
+                   "transform": [{ "calculate": "'https://www.google.com/search?q=' + datum.country + '+' + datum.date + '+' + datum.type", "as": "url" }],
+                   "encoding": {
+                                "longitude": {
+                                              "field": "longitude",
+                                              "type": "quantitative"
+                                             },
+                                "latitude": {
+                                             "field": "latitude",
+                                             "type": "quantitative"
+                                            },
+                                "tooltip": [ { "field": "country", "type": "nominal"},
+                                             { "field": "date", "type": "nominal"},
+                                             { "field": "group", "type": "nominal"},
+                                             { "field": "type", "type": "nominal"},
+                                             { "field": "declaredemergency", "type": "nominal"},
+                                             { "field": "internationalappeal", "type": "nominal"},
+                                             { "field": "peopleaffected", "type": "quantitative"},
+                                             { "field": "peopleinjured", "type": "quantitative"},
+                                             { "field": "peoplehomeless", "type": "quantitative"},
+                                             { "field": "peoplemissingordied", "type": "quantitative"},
+                                             { "field": "damagecost", "type": "quantitative"},
+                                             { "field": "damageinsured", "type": "quantitative"},
+                                             { "field": "aidreceived", "type": "quantitative"},
+                                             { "field": "reconstructioncost", "type": "quantitative"}
+                                           ],
+                                "href": {"field": "url", "type": "nominal"}
+                               }
+                  }
+                 ]
+       }
