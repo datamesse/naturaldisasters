@@ -14,6 +14,10 @@
         "projection": { "type": "equalEarth" },
         "layer": [
                   {
+                   "data": {"graticule": { "step": [5,5] } },
+                   "mark": {"type": "geoshape" }
+                  },
+                  {
                    "mark": {
                             "type": "geoshape",
                             "fill": "black",
