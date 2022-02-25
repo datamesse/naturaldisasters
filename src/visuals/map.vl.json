@@ -1,7 +1,9 @@
 {
-        "background": "null",
+        "background": null,
+        "view": {"fill": "#0f0f0f", "opacity": 0.75 },
         "width": 900,
         "height": 600,
+
         "data": {
                  "url": "https://gist.githubusercontent.com/andriy-gazin/442044f2543e9c7d19d76d0c2dc8125f/raw/6a1f9b0be8cbf6c20ecda24b333ebbb315035185/world.json",
                  "format": {
@@ -17,7 +19,7 @@
                             "fill": "black",
                             "stroke": "#FFAF21",
                             "strokeWidth": 0.25,
-                            "opacity": 0.65
+                            "opacity": 0.65                            
                            }
                   },
                   {
