@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/naturaldisasters/static/css/main.b83b83ba.css",
-    "main.js": "/naturaldisasters/static/js/main.f76f6d2d.js",
+    "main.css": "/naturaldisasters/static/css/main.e3cccfcb.css",
+    "main.js": "/naturaldisasters/static/js/main.e7f7be4d.js",
     "static/js/787.6ed99a99.chunk.js": "/naturaldisasters/static/js/787.6ed99a99.chunk.js",
     "static/media/logo-twitter-hover.svg": "/naturaldisasters/static/media/logo-twitter-hover.cfce77558ab973c8d7c80f6d67f6c1f0.svg",
     "static/media/logo-twitter.svg": "/naturaldisasters/static/media/logo-twitter.77dbc6148144f35210c64c3030ecad9d.svg",
@@ -10,12 +10,12 @@
     "index.html": "/naturaldisasters/index.html",
     "static/media/logo-icons8-hover.svg": "/naturaldisasters/static/media/logo-icons8-hover.989e7e208d18e9e94bad59c4810b415e.svg",
     "static/media/logo-icons8.svg": "/naturaldisasters/static/media/logo-icons8.c14171a3dd77f7a15d8faa998564aac9.svg",
-    "main.b83b83ba.css.map": "/naturaldisasters/static/css/main.b83b83ba.css.map",
-    "main.f76f6d2d.js.map": "/naturaldisasters/static/js/main.f76f6d2d.js.map",
+    "main.e3cccfcb.css.map": "/naturaldisasters/static/css/main.e3cccfcb.css.map",
+    "main.e7f7be4d.js.map": "/naturaldisasters/static/js/main.e7f7be4d.js.map",
     "787.6ed99a99.chunk.js.map": "/naturaldisasters/static/js/787.6ed99a99.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b83b83ba.css",
-    "static/js/main.f76f6d2d.js"
+    "static/css/main.e3cccfcb.css",
+    "static/js/main.e7f7be4d.js"
   ]
 }
