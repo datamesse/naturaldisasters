@@ -100,17 +100,18 @@ body {
 
 /* -------------- VEGA VISUALISATIONS -------------- */
 
+.section-top-left-top .vega-embed canvas {
+  width: 72vw;
+  height: 20vh;
+}
+
 .section-top-left-bottom .vega-embed canvas {
   width: 72vw;
   height: 70vh;
 }
 
-/*
-.section-top-left-top .vega-embed canvas {
 
-  height: 20vh;
-}
-*/
+
 
 /* -------------- SMALLER SCREEN -------------- */
 
@@ -132,6 +133,13 @@ body {
   }
 
   .section-top-left {
+    width: 100vw;
+  }
+
+
+
+
+  .section-top-left-top .vega-embed canvas {
     width: 100vw;
   }
 
