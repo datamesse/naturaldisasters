@@ -98,9 +98,16 @@
     },
     {
       "name": "coordinates",
-      "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.json"
+      "url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.json",
+      "format": { "type": "csv", "parse": "auto" },
+      "transform": [ { "type": "geopoint", "projection": "projection", "fields": ["longitude", "latitude"] } ]
     }
   ],
+
+
+
+
+
 
   "marks": [
     
@@ -133,5 +140,9 @@
         { "type": "geoshape", "projection": "projection" }
       ]
     }
+
   ]
+
+
+
 }

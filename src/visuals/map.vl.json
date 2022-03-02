@@ -11,11 +11,13 @@
                             "feature": "world"
                            }
                 },
-        "projection": { "type": "equalEarth" },
+        "projection": {
+                       "type": "equalEarth"
+                      },
         "layer": [
                   {
-                   "data": {"graticule": { "step": [5,5] } },
-                   "mark": {"type": "geoshape" }
+                   "data": { "graticule": { "step": [5,5] } },
+                   "mark": { "type": "geoshape", "color": "#FFAF21", "opacity": 0.35 }
                   },
                   {
                    "mark": {
