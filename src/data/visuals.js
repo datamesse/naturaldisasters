@@ -16,4 +16,5 @@ export { vbar,
 
          ,vmap2
          ,vscatterplot
+
 }
