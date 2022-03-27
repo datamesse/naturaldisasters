@@ -70,7 +70,7 @@ export default function Dashboard() {
 vegaEmbed('#vis1', vbar, {"actions": false});
 
 
-vegaEmbed('#vis2', vscatterplot, {"actions": false});
+vegaEmbed('#vis2', vmap, {"actions": false});
 
 
 vegaEmbed('#vis3', vcolumn, {"actions": false});
