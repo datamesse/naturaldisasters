@@ -3,7 +3,7 @@
   "description": "Linechart",
   "width": 1100,
   "height": 140,
-  "background": null,
+  "background": "#000",
   "data": {"url": "https://raw.githubusercontent.com/datamesse/naturaldisasters/main/src/data/naturaldisasters.json"},
   "mark": {
     "type": "area",

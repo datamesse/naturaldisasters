@@ -1,5 +1,5 @@
 {
-        "background": null,
+        "background": "#000000",
         "view": {"fill": "#0f0f0f", "opacity": 0.75 },
         "width": 900,
         "height": 600,
