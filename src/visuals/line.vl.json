@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Linechart",
+  "description": "Linechart", 
   "width": 1100,
   "height": 140,
   "background": "#000",
